@@ -7,10 +7,11 @@ MAINTAINER  Brent Schuele <brent.schuele@workiva.com>
 LABEL Description="This image contains the Dart SDK, Sauce Connect, and Docker Compose"
 
 ENV CHANNEL stable
-ENV SDK_VERSION latest
+ENV SDK_VERSION 1.13.2
 ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
 ENV PATH $PATH:/usr/lib/dart/bin
 ENV SC_VERSION 4.3.13
+ENV COMPOSE_VERSION 1.6.2
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -32,5 +33,5 @@ RUN wget -O ./sauce-connect.tar.gz https://saucelabs.com/downloads/sc-$SC_VERSIO
   && rm -rf $SC_VERSION-linux/
 
 RUN curl -fsSL https://get.docker.com/ | sh \
-  && curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
+  && curl -L https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
   && chmod +x /usr/local/bin/docker-compose

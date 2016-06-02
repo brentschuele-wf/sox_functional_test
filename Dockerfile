@@ -7,7 +7,7 @@ MAINTAINER  Brent Schuele <brent.schuele@workiva.com>
 LABEL Description="This image contains the Dart SDK, Sauce Connect, and Docker Compose"
 
 ENV CHANNEL stable
-ENV SDK_VERSION 1.13.2
+ENV SDK_VERSION 1.15.0
 ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
 ENV PATH $PATH:/usr/lib/dart/bin
 ENV SC_VERSION 4.3.13

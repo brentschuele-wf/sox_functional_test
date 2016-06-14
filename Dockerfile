@@ -11,7 +11,7 @@ ENV SDK_VERSION 1.15.0
 ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
 ENV PATH $PATH:/usr/lib/dart/bin
 ENV SC_VERSION 4.3.13
-ENV COMPOSE_VERSION 1.6.2
+ENV COMPOSE_VERSION 1.7.1
 
 RUN apt-get update && apt-get install -y \
     git \
